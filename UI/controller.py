@@ -64,7 +64,10 @@ class Controller:
 
         solBest, durata = self._model.getCammino(self.album, durataInt)
         self._view.txtSimulazione.clean()
-        self._view.txtSimulazione.controls.append(ft.Text(f"Durata massima"))
+        self._view.txtSimulazione.controls.append(ft.Text(f"Durata massima {durata}"))
+        for n in solBest:
+            self._view.txtSimulazione.controls.append(ft.Text(f"{n}"))
+        self._view.update_page()
 
 
     def fillDD(self, nodi):
